@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>WPC Wallpanel - Wallpanelsoc</title>
 <link rel="stylesheet" href="css/style.css">
+
 <style>
   body {margin:0;font-family:Arial,sans-serif;}
     header {background:#1a1a1a;color:#fff;padding:15px;display:flex;align-items:center;justify-content:space-between;}
@@ -161,7 +162,8 @@ html { scroll-behavior:smooth; }
     ul{list-style:none;margin:0;padding:0;background:#00000000}ul li{display:inline-block;position:relative}ul li a{display:block;padding:12px 20px;color:white;text-decoration:none}ul li a:hover{background:#444}ul li ul{display:none;position:absolute;background:#444;padding:0;margin:0;min-width:180px;z-index:99}ul li ul li{display:block}ul li.open>ul{display:block}
     footer {background:#111;color:#eee;text-align:center;padding:20px;}
     button {background:#1a1a1a;color:#fff;padding:10px 20px;border:none;border-radius:6px;cursor:pointer;}
-   @media (max-width: 768px) {
+
+    @media (max-width: 768px) {
     header {flex-direction: column;align-items: flex-start;}
     nav ul {flex-direction: column;width: 100%;}
     nav ul li {display: block;width: 100%;}
@@ -181,6 +183,36 @@ html { scroll-behavior:smooth; }
     .modal-content img {width: 100%;max-width: 300px;}
     .modal-info {width: 100%;}
   }
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: white;
+}
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  nav ul {
+    display: none;           /* disembunyikan dulu */
+    flex-direction: column;
+    width: 100%;
+    background: #333;
+  }
+  nav ul li {
+    width: 100%;
+    text-align: left;
+  }
+  nav ul li a {
+    display: block;
+    padding: 12px;
+    border-top: 1px solid #444;
+  }
+  nav ul.show {
+    display: flex;           /* kalau diklik muncul */
+  }
+
 </style>
 </head>
 <body>
@@ -191,6 +223,7 @@ html { scroll-behavior:smooth; }
       <!-- GANTI dengan logo toko kamu -->
       <img src="logo transparan.png" alt="Logo WALLPANELSOC"style="object-fit:contain;border: radius 0;";>
     </div>
+    <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
     <nav>
  <ul>
     <li><a href="index.html">Beranda</a></li>
@@ -436,8 +469,10 @@ html { scroll-behavior:smooth; }
       closeModal();
     }
   });
+  function toggleMenu() {
+  document.getElementById("menu").classList.toggle("show");
+}
 </script>
 
 </body>
 </html>
-
