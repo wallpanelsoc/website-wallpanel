@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WPC Wallpanel - Wallpanelsoc</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+  body {margin:0;font-family:Arial,sans-serif;}
+    header {background:#1a1a1a;color:#fff;padding:15px;display:flex;align-items:center;justify-content:space-between;}
+    .logo img {height:80px;border: radius 0px}
+    nav a {color:#ffffff;text-decoration:none;margin:0 10px;}
+    .hero { display:flex; align-items:center; justify-content:space-between; padding:40px; min-height:30vh; background:hwb(0 100% 0%); }
+.hero-content { flex:1; max-width:50%; font-family:'Montserrat',sans-serif; }
+.hero-content h1 { font-size:3rem; margin-bottom:20px; color:#333; }
+.hero-content h2 { font-size:2.5rem; margin-bottom:20px; color:#333; }
+.hero-content h1, .hero-content h2 { text-align:center; }
+.hero-content p { font-size:1.2rem; margin-bottom:30px; text-align:center; color:#555; }
+.hero-image { flex:1; display:flex; justify-content:flex-end; }
+.hero-image img { max-width:50%; border-radius:12px; }
+.text-section { padding: 20px 20px; text-align: center; }
+.text-section h2 { font-size: 20px; margin-bottom: 15px; }
+.text-section p { max-width: 1000px; margin: 0 auto; line-height: 1.6; }
+html { scroll-behavior:smooth; }
+.btn-wrapper { text-align:center; margin-top:10px; }
+.btn { display:inline-block; padding:12px 24px; background:#000; color:#fff; text-decoration:none; border-radius:8px; font-weight:bold; transition:0.3s; text-align:center}
+.btn:hover { background:#333; }
+ body {
+      font-family: Arial, sans-serif;
+      background: #f9fcfd;
+      margin: 0;
+      padding: 20px;
+    }
+    h2 {
+      margin-bottom: 20px;
+    }
+    .produk-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 15px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+    .card h3 {
+      font-size: 15px;
+      margin: 5px 0;
+    }
+    .card p {
+      font-size: 13px;
+      color: #000000;
+      margin: 5px 0 10px 0;
+      min-height: 40px; /* biar rapi walau teks beda panjang */
+    }
+    .harga {
+      font-weight: bold;
+      color: #009879;
+      margin: 5px 0 10px 0;
+    }
+    .btn-group {
+      display: flex;
+      gap: 10px;
+    }
+    .btn {
+      flex: 1;
+      text-align: center;
+      padding: 6px 0;
+      border-radius: 6px;
+      font-size: 14px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .btn-detail {
+      background: #f1f1f1;
+      color: #000000;
+    }
+    .btn-beli {
+      background: #feffff;
+      color: rgb(0, 0, 0);
+    }
+      .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .modal-content {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 12px;
+      display: flex;
+      gap: 20px;
+      max-width: 800px;
+      width: 90%;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+    .modal-content img {
+      width: 250px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+    .modal-info h3 {
+      margin: 0 0 10px 0;
+    }
+    .modal-info p {
+      font-size: 14px;
+      margin: 5px 0 10px 0;
+    }
+    .modal-info .harga {
+      font-size: 16px;
+      color: #009879;
+      margin-bottom: 15px;
+    }
+    .modal-btns {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .btn-wa {
+      background: #009879;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+    .btn-info {
+      background: #f1f1f1;
+      color: #333;
+      padding: 8px 12px;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+    .btn-close {
+      position: absolute;
+      top: 20px; right: 20px;
+      background: #fff;
+      border: 1px solid #333;
+      padding: 4px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .section {padding:60px 20px;max-width:1200px;margin:auto;}
+    ul{list-style:none;margin:0;padding:0;background:#00000000}ul li{display:inline-block;position:relative}ul li a{display:block;padding:12px 20px;color:white;text-decoration:none}ul li a:hover{background:#444}ul li ul{display:none;position:absolute;background:#444;padding:0;margin:0;min-width:180px;z-index:99}ul li ul li{display:block}ul li.open>ul{display:block}
+    footer {background:#111;color:#eee;text-align:center;padding:20px;}
+    button {background:#1a1a1a;color:#fff;padding:10px 20px;border:none;border-radius:6px;cursor:pointer;}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+  <header>
+    <div class="logo">
+      <!-- GANTI dengan logo toko kamu -->
+      <img src="logo transparan.png" alt="Logo WALLPANELSOC"style="object-fit:contain;border: radius 0;";>
+    </div>
+    <nav>
+ <ul>
+    <li><a href="index.html">Beranda</a></li>
+    <li id="produkMenu">
+      <a href="#">Produk</a>
+      <ul>
+        <li><a href="spc.html">SPC Flooring</a></li>
+        <li><a href="wpc.html">WPC</a></li>
+        <li><a href="wallboard.html">Wallboard</a></li>
+        <li><a href="uvboard.html">UV Board</a></li>
+        <li><a href="3dwallpanel.html">3D Wallpanel</a></li>
+        <li><a href="uvsticker.html">UV Sticker</a></li>
+      </ul>
+    </li>
+    <li><a href="#tentang">Tentang Kami</a></li>
+    <li><a href="#kontak">Kontak</a></li>
+    <li><a href="#layanan">Layanan</a></li>
+  </ul>
+
+  <script>
+    // Supaya dropdown muncul saat di-klik, bukan hover
+    const produkMenu = document.getElementById("produkMenu");
+    const produkLink = produkMenu.querySelector("a");
+
+    produkLink.addEventListener("click", function(e) {
+      e.preventDefault(); // biar tidak langsung reload
+      produkMenu.classList.toggle("open");
+    });
+
+    // Tutup dropdown kalau klik di luar menu
+    document.addEventListener("click", function(e) {
+      if (!produkMenu.contains(e.target)) {
+        produkMenu.classList.remove("open");
+      }
+    });
+  </script>
+    </nav>
+     <div class="social-icons">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-tiktok"></i></a>
+    </div>
+  </header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>WPC Wallpanel</h1>
+        <h2>(Wood Plastic Composite)</h2>
+    <p>Dinding elegan, tahan lama, anti rayap & mudah dirawat.</p>
+  </div>
+  <div class="hero-image">
+    <img src="Salve Painéis.jpg" alt="WPC Wallpanel" />
+  </div>
+</section>
+<section class="text-section">
+  <div class="container">
+    <p>
+    Hadirkan nuansa elegan dengan WPC Wall Panel. 
+    Perpaduan keindahan kayu alami dan kekuatan material modern, tahan air, anti rayap, serta mudah dirawat. 
+    Solusi praktis untuk dinding hunian maupun ruang komersial Anda.
+    </p>
+  </div>
+</section>
+<div class="btn-wrapper">
+  <a href="#katalog" class="btn">OUR CATALOGUE</a>
+</div>
+
+<!-- Section Katalog -->
+<section id="katalog" style="padding:50px; text-align:center; background:#f9f9f9;">
+  <h2>Katalog SPC</h2>
+   <div class="produk-container">
+        <div class="card">
+      <img src="WL1002.png" alt="WL1002">
+      <h3>WL1002</h3>
+      <div class="harga">75.000</div>
+<a href="#"
+     class="btn btn-detail"
+     data-desc="Kuat, tahan air, anti rayap, dan tetap elegan seperti kayu asli, WPC adalah pilihan tepat untuk hunian modern"
+     data-ukuran="16cmx290cm">
+     Detail
+      <a href="https://wa.me/6281393647702?text=Halo,%20saya%20mau%20pesan%20WPC%20WL-1002" class="btn">Beli</a>
+    </div>
+
+    <div class="card">
+      <img src="WL1003.png" alt="WL1003">
+      <h3>WL1003</h3>
+      <div class="harga">75.000</div>
+  <a href="#"
+     class="btn btn-detail"
+     data-desc="Perpaduan keindahan kayu alami dengan daya tahan tinggi, WPC menghadirkan nuansa hangat sekaligus praktis dalam perawatan"
+     data-ukuran="16cmx290cm">
+     Detail
+      <a href="https://wa.me/6281393647702?text=Halo,%20saya%20mau%20pesan%20WPC%20WL-1003" class="btn">Beli</a>
+    </div>
+      <div class="card">
+      <img src="WL1004.png" alt="WL1004">
+      <h3>WL1004</h3>
+      <div class="harga">75.000</div>
+  <a href="#"
+     class="btn btn-detail"
+     data-desc="WPC menawarkan keindahan kayu tanpa khawatir rayap, lembap, atau lapuk, sehingga tetap awet bertahun-tahun"
+     data-ukuran="16cmx290cm">
+     Detail
+      <a href="https://wa.me/6281393647702?text=Halo,%20saya%20mau%20pesan%20WPC%20WL-1004" class="btn">Beli</a>
+    </div>
+      <div class="card">
+      <img src="WL1006.png" alt="WL1006">
+      <h3>WL1006</h3>
+      <div class="harga">75.000</div>
+  <a href="#"
+     class="btn btn-detail"
+     data-desc="Dengan tampilan elegan dan kekuatan maksimal, WPC menjadi solusi ideal untuk interior maupun eksterior rumah Anda"
+     data-ukuran="16cmx290cm">
+     Detail
+      <a href="https://wa.me/6281393647702?text=Halo,%20saya%20mau%20pesan%20WPC%20WL-1006" class="btn">Beli</a>
+    </div>
+      <div class="card">
+      <img src="WL1007.png" alt="WL1007">
+      <h3>WL1007</h3>
+      <div class="harga">75.000</div>
+  <a href="#"
+     class="btn btn-detail"
+     data-desc="Tahan air, anti rayap, serta ramah lingkungan, WPC menghadirkan keindahan alami dengan daya tahan modern"
+     data-ukuran="16cmx290cm">
+     Detail
+      <a href="https://wa.me/6281393647702?text=Halo,%20saya%20mau%20pesan%20WPC%20WL-1007" class="btn">Beli</a>
+    </div>
+
+         <div class="card">
+      <img src="WL1008.png" alt="WL1008">
+      <h3>WL1008</h3>
+      <div class="harga">75.000</div>
+  <a href="#"
+     class="btn btn-detail"
+     data-desc="Kokoh seperti batu, indah seperti kayu, WPC memberikan sentuhan elegan tanpa repot perawatan"
+     data-ukuran="16cmx290cm">
+     Detail
+      <a href="https://wa.me/6281393647702?text=Halo,%20saya%20mau%20pesan%20WPC%20WL-1008" class="btn">Beli</a>
+    </div>
+
+         <div class="card">
+      <img src="WL1010.png" alt="WL1010">
+      <h3>WL1010</h3>
+      <div class="harga">75.000</div>
+  <a href="#"
+     class="btn btn-detail"
+     data-desc="WPC menghadirkan dinding cantik yang tahan lama, tidak mudah lapuk, dan tetap memancarkan kesan alami"
+     data-ukuran="16cmx290cm">
+     Detail
+      <a href="https://wa.me/6281393647702?text=Halo,%20saya%20mau%20pesan%20WPC%20WL-1010" class="btn">Beli</a>
+    </div>
+
+         <div class="card">
+      <img src="WL-1011.png" alt="WL-1011">
+      <h3>WL1011</h3>
+      <div class="harga">75.000</div>
+  <a href="#"
+     class="btn btn-detail"
+     data-desc="Perawatan mudah, tampilan elegan, serta ketahanan ekstra membuat WPC pilihan cerdas untuk dekorasi rumah"
+     data-ukuran="16cmx290cm">
+     Detail
+      <a href="https://wa.me/6281393647702?text=Halo,%20saya%20mau%20pesan%20WPC%20WL-1011" class="btn">Beli</a>
+    </div>
+
+         <div class="card">
+      <img src="WL1012.png" alt="WL1012">
+      <h3>WL1012</h3>
+      <div class="harga">75.000</div>
+  <a href="#"
+     class="btn btn-detail"
+     data-desc="Dengan WPC, Anda bisa menikmati keindahan kayu tanpa khawatir rayap, jamur, atau kerusakan karena cuaca"
+     data-ukuran="16cmx290cm">
+     Detail
+      <a href="https://wa.me/6281393647702?text=Halo,%20saya%20mau%20pesan%20WPC%20WL-1011" class="btn">Beli</a>
+    </div>
+
+
+  </div>
+</section>
+
+  <section id="kontak" class="section">
+    <h2 style="text-align:center;margin-bottom:30px;">Kontak</h2>
+    <p style="text-align:center;">Hubungi kami untuk informasi dan pemesanan:</p>
+    <!-- GANTI nomor WhatsApp dan email -->
+    <p style="text-align:center;">📞 +6281393647702| ✉️ info@wallpanelsoc.com</p>
+  </section>
+
+  <footer>
+    <!-- GANTI nama toko kalau perlu -->
+    <p>&copy; 2025 WALLPANELSOC. Semua Hak Dilindungi.</p>
+  </footer>
+  <!-- Modal Produk -->
+<div class="modal" id="produkModal">
+  <div class="modal-content">
+    <img id="modalImg" src="" alt="Produk">
+    <div class="modal-info">
+      <h3 id="modalTitle"></h3>
+      <p id="modalDesc"></p>
+        <p id="modalUkuran"></p> <!-- ✅ ini baris baru untuk nampilin ukuran -->
+      <div class="harga" id="modalHarga"></div>
+      <div class="modal-btns">
+        <a id="waLink" href="#" target="_blank" class="btn-wa">Pesan via WA</a>
+      </div>
+    </div>
+  </div>
+  <button class="btn-close" onclick="closeModal()">Tutup</button>
+</div>
+
+<script>
+  const detailBtns = document.querySelectorAll('.btn-detail');
+
+  detailBtns.forEach(btn => {
+    btn.addEventListener('click', function(e){
+      e.preventDefault(); // cegah reload
+
+      let card   = this.closest('.card');
+      let title  = card.querySelector('h3').innerText;
+    let desc   = this.getAttribute('data-desc');
+    let ukuran = this.getAttribute('data-ukuran');
+      let harga  = card.querySelector('.harga').innerText;
+      let img    = card.querySelector('img').src;
+      let waLink = card.querySelectorAll('a')[1].href; // tombol beli
+
+      document.getElementById('modalTitle').innerText = title;
+      document.getElementById('modalDesc').innerText  = desc;
+       document.getElementById('modalUkuran').innerText = ukuran;
+      document.getElementById('modalHarga').innerText = harga;
+      document.getElementById('modalImg').src         = img;
+      document.getElementById('waLink').href          = waLink;
+
+      document.getElementById('produkModal').style.display = 'flex';
+    });
+  });
+
+  function closeModal(){
+    document.getElementById('produkModal').style.display = 'none';
+  }
+
+  // klik area luar modal untuk nutup
+  window.addEventListener('click', function(e){
+    const modal = document.getElementById('produkModal');
+    if(e.target === modal){
+      closeModal();
+    }
+  });
+</script>
+
+</body>
+</html>

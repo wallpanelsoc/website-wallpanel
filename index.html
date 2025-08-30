@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WALLPANELSOC</title>
+  <style>
+    body {margin:0;font-family:Arial,sans-serif;}
+    header {background:#1a1a1a;color:#fff;padding:15px;display:flex;align-items:center;justify-content:space-between;}
+    .logo img {height:80px;border: radius 0px}
+    nav a {color:#ffffff;text-decoration:none;margin:0 10px;}
+    .hero {background:url('assets/hero-wall.jpg') center/cover no-repeat;height:80vh;display:flex;align-items:center;justify-content:center;color:#000000;text-align:center;}
+    .hero h1 {font-size:48px;}
+    .section {padding:60px 20px;max-width:1200px;margin:auto;}
+    .products {display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
+    .product {border:1px solid #ccc;padding:15px;border-radius:8px;text-align:center;}
+    .product img {width:100%;height:180px;object-fit:contain;border-radius:8px;}
+    ul{list-style:none;margin:0;padding:0;background:#00000000}ul li{display:inline-block;position:relative}ul li a{display:block;padding:12px 20px;color:white;text-decoration:none}ul li a:hover{background:#444}ul li ul{display:none;position:absolute;background:#444;padding:0;margin:0;min-width:180px;z-index:99}ul li ul li{display:block}ul li.open>ul{display:block}
+    footer {background:#111;color:#eee;text-align:center;padding:20px;}
+    button {background:#1a1a1a;color:#fff;padding:10px 20px;border:none;border-radius:6px;cursor:pointer;}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <!-- GANTI dengan logo toko kamu -->
+      <img src="logo transparan.png" alt="Logo WALLPANELSOC"style="object-fit:contain;border: radius 0;";>
+    </div>
+    <nav>
+ <ul>
+    <li><a href="index.html">Beranda</a></li>
+    <li id="produkMenu">
+      <a href="#">Produk</a>
+      <ul>
+        <li><a href="spc.html">SPC Flooring</a></li>
+        <li><a href="wpc.html">WPC</a></li>
+        <li><a href="wallboard.html">Wallboard</a></li>
+        <li><a href="uvboard.html">UV Board</a></li>
+        <li><a href="3dwallpanel.html">3D Wallpanel</a></li>
+        <li><a href="uvsticker.html">UV Sticker</a></li>
+      </ul>
+    </li>
+    <li><a href="#tentang">Tentang Kami</a></li>
+    <li><a href="#kontak">Kontak</a></li>
+    <li><a href="#Layanan">Layanan</a></li>
+  </ul>
+
+  <script>
+    // Supaya dropdown muncul saat di-klik, bukan hover
+    const produkMenu = document.getElementById("produkMenu");
+    const produkLink = produkMenu.querySelector("a");
+
+    produkLink.addEventListener("click", function(e) {
+      e.preventDefault(); // biar tidak langsung reload
+      produkMenu.classList.toggle("open");
+    });
+
+    // Tutup dropdown kalau klik di luar menu
+    document.addEventListener("click", function(e) {
+      if (!produkMenu.contains(e.target)) {
+        produkMenu.classList.remove("open");
+      }
+    });
+  </script>
+    </nav>
+     <div class="social-icons">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-tiktok"></i></a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div>
+      <!-- GANTI teks promosi utama -->
+      <h1>Solusi Wallpanel Modern & Elegan</h1>
+      <p>Transformasi rumah dan kantor Anda bersama Wallpanelsoc</p>
+      <br>
+      <!-- GANTI nomor WhatsApp -->
+      <a href="https://wa.me/6281393647702" target="_blank"><button>Hubungi Kami</button></a>
+    </div>
+  </section>
+
+  <section id="layanan" class="section">
+    <h2 style="text-align:center;margin-bottom:30px;">Layanan</h2>
+    <!-- GANTI daftar layanan sesuai toko -->
+    <p style="text-align:center;">Konsultasi desain, pemasangan wallpanel, dan pengiriman cepat ke seluruh Indonesia.</p>
+  </section>
+
+  <section id="tentang" class="section">
+    <h2 style="text-align:center;margin-bottom:30px;">Tentang Kami</h2>
+    <!-- GANTI deskripsi tentang toko -->
+    <p style="text-align:center;max-width:800px;margin:auto;">
+      WALLPANELSOC adalah penyedia wallpanel modern dengan berbagai pilihan material dan desain untuk kebutuhan rumah, kantor, maupun proyek besar.
+    </p>
+  </section>
+
+  <section id="kontak" class="section">
+    <h2 style="text-align:center;margin-bottom:30px;">Kontak</h2>
+    <p style="text-align:center;">Hubungi kami untuk informasi dan pemesanan:</p>
+    <!-- GANTI nomor WhatsApp dan email -->
+    <p style="text-align:center;">📞 +62 812 3456 7890 | ✉️ info@wallpanelsoc.com</p>
+  </section>
+
+  <footer>
+    <!-- GANTI nama toko kalau perlu -->
+    <p>&copy; 2025 WALLPANELSOC. Semua Hak Dilindungi.</p>
+  </footer>
+</body>
+</html>
